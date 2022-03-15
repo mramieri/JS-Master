@@ -26,6 +26,6 @@ const carrito = [
 
 console.log(nuevoArreglo);
 console.log(nuevoArreglo2);
-
+//.
 
 //.map crea un nuevo arreglo y foraeach no.
