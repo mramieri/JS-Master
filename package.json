@@ -1,0 +1,22 @@
+{
+  "name": "js-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mramieri/JS-Master.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mramieri/JS-Master/issues"
+  },
+  "homepage": "https://github.com/mramieri/JS-Master#readme",
+  "dependencies": {
+    "eslint": "^8.13.0"
+  }
+}
