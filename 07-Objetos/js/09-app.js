@@ -1,7 +1,5 @@
-//con Seal si bien se sella, se puede modificar lo que existe adentro del objeto
-//lo que si, a diferencia del freeze, es que no puedo agregar algo nuevo. si intento agregar algo, me va a decir la consola error-objeto no extensible.
-
 "use strict";
+
 
 const producto = {
     nombre: "Monitor 20 pulgadas",
@@ -9,18 +7,21 @@ const producto = {
     disponible: true,
 }
 
+Object.seal(producto); // Sellar el objeto.
+//A diferencia de freeze, no se puede agregar y eliminar propiedades, pero si se pueden modificar las existentes. Como es el caso de 
+//producto.disponible Ahi si que me deja editarlo, porque seria modificar una existente.
 
-Object.seal( producto );
+//producto.disponible = false;
+//producto.imagen = "imagen.jpg"; // Pero aca me da error! esta es agregar y ahi si que no me deja.
+delete producto.precio; // Aca me da error! esta es quitar y ahi tampoco me deja.
 
-producto.disponible = false;
-//producto.imagen = "imagen.jpg";
-//delete producto.precio; 
 
-console.log(producto);
+//console.log(producto);
+ 
+//Entonces si me hacen esa pregunta para un trabajo: cual es la diferencia entre freeze y seal?
+//Freeze no me deja hacer nada, deja el objeto tal cual está
+// Y seal me permite modificar las llaves ya existentes de un objeto. pero no me deja añadir nuevas no tampoco eliminarlas.
 
- //con freeze no se puede hacer nada, deja el objeto tal cual esta
- //seal si me permite modificar las llaves existentes de un objeto, pero no me permite añadir nuevas. ni tampoco eliminarlas.
+//Si quiero saber si un objeto está sellado:
 
- //¿como saber si un objeto esta sellado?:
-
- console.log(Object.isSealed(producto));
+console.log(Object.isSealed(producto)); // Y le paso el objecto que quiero comprobar, usando "object.isSealed"

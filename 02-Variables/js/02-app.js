@@ -1,25 +1,27 @@
-//Voy a comentar el 01
+//No puedo tener variables que se llamen igual dentro del mismo nivel (scope). aunque sea 01app.js y otra este en 02app.js. // si se puede hacer eso dentro de un IF o dentro de una FUNCION, pero NO en el mismo NIVEL.
+let producto = "Tablet";
 
-let producto = "tablet";
-//No se puede utilizar variables con el MISMO nombre en el mismo nivel
-// La realidad es que se recomienda hoy ahora utilizar LET para variables o CONS .
-//Let me permite iniciaizar una variable y crear un valor:
-// Tmb me permite reasignar el valor
+//hoy en dia, las opciones son LET y CONST. (las reglas son las mismas). Aunque la mayoria de los ejemplos hoy en internet usan "var".
 
-producto = "tablet";
-producto = true;
-producto = null
+//let me permite inicializar una variable, tambien crear un valor. tambien me permite:
+//Permite reasignar un valor
 
-//una variable puede tener distintos datos:
+producto = "Monitor";
+producto = 20;
+//puedo REASIGNAR las variables cuando están definidas con "let"
+
+producto = true; //tmb puedo asignarle un booleano
+producto = null;
 
 console.log(producto);
 
-// Se puede reasignar las variables cuando estan definidas con let! 
-
-let precio;
+let precio; //Tmb puedo crear la variavle sin darle ningun valor en el momento que la creo
+    precio = 300; // Le puedo pasar el precio despues a mi variable y funciona OK (sin volver a ponerle "let")
 
 console.log(precio);
 
-//la diferencia entre var y let es "el scope de las variables". todo lo que vi en el video 1 section 1 aplica IGUAL para let
 
-//Se deben inicializar con un valor las de CONST. Si por alguna razon aun no conozco const, entonces mejor uso LET.
+/*
+la principal diferencia entre VAR y LET: es el scope justamente de las variables.
+pero lo que está antes explicado para VAR aplica igual que para LET.
+*/

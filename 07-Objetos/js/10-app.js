@@ -1,5 +1,3 @@
-//Unir objetos: ejemplo un ID con
-"use strict";
 
 const producto = {
     nombre: "Monitor 20 pulgadas",
@@ -7,24 +5,24 @@ const producto = {
     disponible: true,
 }
 
-
 const medidas = {
-    peso: ' 1kg',
-    medida: '1m',
+    peso: "1 kg",
+    medida: "1 metro",
 }
-  
 
 console.log(producto);
 console.log(medidas);
 
-//como ubo ambos objetos? asi
-const resultado = Object.assign(producto, medidas);
-//esto asigna a ambos objetos (prod y med) y los asigna a "resultados"
+//Una forma es usando Object.assign(); y en los () le paso lo que quiero unir
 
-//otra forma: "SPREAD OPERATOR o REST OPERATOR"
-const resultado2 = {...producto, ...medidas }
+const resultado = Object.assign(producto, medidas);
+
+
+
+//Spread operator o Rest operator (Operador de la difusión/reparto) -- la mas utilizada
+const resultado2 = { ...producto, ...medidas }
 
 console.log(resultado);
 console.log(resultado2);
 
-//ambas formas me dan el mismo resultado. los 3 puntos toman una copia de producto, y me medidas lo asignan adentro del objeto
+//Y el resultado es el mismo!

@@ -1,22 +1,21 @@
 //Undefined
 let numero;
 
+console.log(numero); // me retorna undefined. porque la variable está definida pero su valor NO.
+//console.log(typeof numero ); // Si acá al console.log le agregp el operador "typeof" a la variable "numero", me devolverá el tipo de dato; justamente undefined.
 
-console.log(numero);
-
-//console.log(typeof numero);
 
 
 //Null
 let numero2 = null;
-console.log(numero2);
-//console.log(typeof numero2);
 
-//en JS los null se los considera como objetos.- ("Ecma")
-
-//console.log(numero == numero2);
-//ojo! eso me devolvió true: comparte un numero inexistente con el n°1. por eso, siempre comparar ESTRICTAMENTE. porque ese comparador (==) es "mas relajado"
+console.log(numero2); // Me devuelve null           
+//console.log(typeof numero2 ); // Me devuelve object . Esto pasa porque la especificación de EcmaScript, quien deefine el standard del lenguaje, dice que los "null" deben ser objetos.
 
 
-console.log(numero === numero2);
-//SI ALGO SALE MAL SABRE POR QUE ME ESTA SUCEDIENDO
+//Si comparo
+console.log(numero == numero2); // JS me dice que es true! a pesar de que numero no tiene un valor, eso usualmente lleva a comportamientos extraños, ya que estamos comparando un valor que no existe (entre numero y numero2 en este caso).
+console.log(numero === numero2); // Si uso el comparador estricto, (SIEMPRE usar este), me devuelve false. 
+
+//Basicamente es esa la diferencia entre el == y el ===. 
+//El == es un poco más relajado y el === es estricto.

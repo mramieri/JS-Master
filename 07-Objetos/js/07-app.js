@@ -5,12 +5,16 @@ const producto = {
     disponible: true,
 }
 
-console.log(producto);
 
-producto.disponible = false;
-delete producto.precio;
 
-console.log(producto);
+ //const nombreProducto = "Monitor";
+ //nombreProducto = "Tablet"; // Esto NO se puede hacer porque no se puede reasignar una variable con CONST.
+ //Sin embargo, en los objetos si se puede reasignar! Eso pasa porque a pesar de que una variable sea CONST, al estar en un objeto, sus llaves si se pueden reescribir.
 
-//eso me da falso, a pesar de que se encontraba adentro de un objeto ya descripta como True. 
-//eso pasa porque justamente, si estan dentro de un objeto, yo luego a la const la puedo rescribir.
+ //si aca modifico el valor de disponible y lo mando a false;
+
+ producto.disponible = false;
+
+ delete producto.precio; // Acá inclusive lo puedo eliminar!
+ console.log(producto);  // Efectivamente la consola me devuelve disponible = false.
+

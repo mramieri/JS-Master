@@ -1,28 +1,27 @@
-//Object Literal:
+
+//Así creo con Object Literal:
 
 const producto = {
     nombre: "Monitor 20 pulgadas",
     precio: 300, 
     disponible: true,
- 
-    }
+    
+    } // Al objeto le paso un nombre, un precio y si está disponible o no.
 
-//Object Constructor:
 
-function Producto (nombre, precio) {
-        this.nombre = nombre;
-        this.precio = precio;
+    //Así creo con Object Constructor:
+    //Acá lo voy a definir primero como una funcion:
+
+    function Producto( nombre, precio) { //Si estoy creando nuevo producto, es porque está disponible (le tengo que poner un nombre, un precio )
+        this.nombre = nombre; // This.nombre será igual al nombre que yo le voy a pasar
+        this.precio = precio; // This.nombre será igual al nombre que yo le voy a pasar
         this.disponible = true;
-}
+    }
+//con this. permite que no se mezclen los valores. Por lo tanto, cuando yo cree nuevos "Productos", quiero que se asocien a ese nuevo producto.
 
-const producto2 = new Producto('Monitor de 24 pulgadas', 500);
-console.log (producto2);
 
-//This hace que no pierda la referencia
+const Producto2 = new Producto("Monitor de 24 pulgadas", 500); // Entonces creo const Producto2 = a new y le pasamos Producto(). Y tengo que pasarle los valores de ( nombre, precio) en  naranjita, esos parametros.
+console.log(Producto2);
 
-const producto3 = new Producto('Television', 100);
-console.log(producto3);
-
-//el THIS los almacena dentro del objeto, no los busca por fuera del objeto. esto es OBJECT CONSTRUCTOR. es mas dinamico.
-//el object literal no es tan dinamico. esto era antes la programacion orientada a objetos en JS .
-//igual el object literal se utiliza mas que el constructor.
+    const Producto3 = new Producto("Television", 100);
+    console.log(Producto3);

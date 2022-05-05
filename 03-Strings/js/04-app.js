@@ -1,16 +1,22 @@
-const producto = '                 Monitor de 20 pulgadas            ';
 
-console.log(producto);
-console.log(producto.length);
+const producto = '                Monitor de 20 pulgadas           ';
 
+//console.log(producto);
+//console.log(producto.length);
 
+//Eliminar espacios del inicio:
 
-//eliminar del incicio muchos espacios (en formularios x ej)
-console.log( producto.trimStart() );
-console.log( producto.trimEnd() );
+//console.log(producto.trimStart());
+/*
+Tendré muchos formularios mas adelante, y ahi los usuarios en gral, para pasar las validaciones, usaran espacios en blanco.
+Asi me sirve para eliminar espacios en blanco y solo se pueda insertar caracteres reales.
+*/
 
-console.log ( producto.trimStart().trimEnd() );
-//ese es el que va! el ultimo borra adelante y atras a los espacios, me ayuda a eliminar espacios en una direccion o en otra.
+//Eliminar espacios del final:
+//console.log(producto.trimEnd());
 
-console.log( producto.trim() );
-//esta ultima borra TODOS, cuando no es necesario borrar en ambas direcciones
+//en JS se pueden usar los metodos de forma encadenada. Se lo llama "chaining", colocar un metodo y luego el otro:
+//console.log(producto.trimStart().trimEnd()); //Asi se eliminan los espacios en ambas direcciones.
+
+//Antes existia .trim que era para ambas direcciones:
+console.log(producto.trim());

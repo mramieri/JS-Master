@@ -1,19 +1,29 @@
-//Un objeto y adentro hay un 2do objeto:
-const producto = {
+const producto = {                          //Estas llaves es un buen indicativo de que esto es un OBJETO.
     nombre: "Monitor 20 pulgadas",
     precio: 300, 
     disponible: true,
-    informacion : {
-             medidas :{
-             peso :'1kg',
-            medida: '1m',  
-            },
-                fabricacion : {
-                    pais : 'china',
-                }
-   }
-}
-//console.log(producto);
-console.log(producto.informacion.fabricacion.pais);
+    informacion: {
+          Medidas: {
+            peso: "1 kg",
+            medida: "1 metro",
+        }, //Acá tiene que ir una coma luego del objeto "Medidas"
+          Fabricacion: {
+            pais: "China",
 
-//asi puedo ir accediendo adentro de un objeto, y a su subobjeto
+            }
+    }
+    
+}
+/*
+console.log(producto);
+
+//De la misma manera puedo acceder al sub-objeto (o sea a información) utilizando la sintaxis de punto:
+
+console.log(producto.informacion); // Y acá en la consola ya me muestra todo lo que tiene el objeto "informacion":
+
+//Y si qusiera acceder a peso o a medida:
+console.log(producto.informacion.peso);
+console.log(producto.informacion.medida);
+*/
+
+console.log(producto.informacion.Fabricacion.pais);

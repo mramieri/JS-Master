@@ -1,43 +1,53 @@
-//Inicializar una variable con un valor
-var producto = "monitor de 24 pulgadas";
+//Inicializar variables con un valor
+var producto = "Monitor 24 pulgadas";
 console.log(producto);
 
 //Las variables se pueden reasignar
-producto = "monitor de 19 pulgadas";
+producto = "Monitor 19 pulgadas";
 console.log(producto);
 
-//JavaScript es un lenguaje de tipo dinamico, no se especifica tipo de dato
-producto = 20;
+//JavaScript es un lenguaje de tipo dinámico, no se especifica el tipo de dato.
+producto = 25;
 console.log(producto);
 
-// Se puede inicializar sin valor y asignarlo después
+//Se puede inicializar un valor y asignarlo después:
 var disponible;
+
 disponible = true;
 
 disponible = false;
 
-
-//Inicializar múltiples variables:
+//Inicializar multiples variables:
 var categoria = 'Computadoras',
-    categoria = "Marca famosa",
-    categoria = 5;
+    marca = 'Marca famosa',
+    calificacion = 5;
 
+/*
+Las Variables no se puede inicializar con numeros:
 
-//Las variables no se puede inicializar con numeros:
-//var 99días;
-//var dias99;
+var 99dias; eso NO se puede
 
-// var 01_;
-// Pero si se puede arrancar con _
- //var _01;
- //var _usuario;
- //var __usuario;
+var dias99; //esto SI se puede
 
-//Calemcase (segunda palabra con una letra mayuscula) - LA MAS COMUN 
-//var nombreProductoCategoriaPrecio;
+var 01_; //esto no se puede
 
-// Guion bajo o underscore, snake o serpiente (esto NO es comun en JS)
-//var nombre_producto__categoria_precio;
-//var Nombre // Pascalscase = NO se usa mucho, es mas que nada para clases
+var _01; // esto SI se puede
+var __usuario; //esto SI se puede (no nombrar a las variables asi!)
+
+var remera Producto: //esto NO. la variable es "remera" si es que dejo ese espacio.
+*/
+
+camelCase:
+var remeraProducto; //esta es la mas recomendada.
+
+underScore //snake:
+
+var remera_Producto_categoria;
+
+pascalCase:
+//se usa para CLASES:
+
+var Producto;
+
 
 

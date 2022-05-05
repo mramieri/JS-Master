@@ -1,29 +1,27 @@
-//This: palabra reservada (no puedo nombrar a la variable this)
-//busca en la propiedad del objeto, no en los de afuera. sino, la funcion me lee las propiedades del objeto que primero aparezcan:
+const nombre = "Hola";
+const precio = 20;
 
 const producto = {
     nombre: "Monitor 20 pulgadas",
     precio: 300, 
     disponible: true,
-    mostrarInfo: function() {
-        console.log(`El Producto: ${this.nombre} tiene un precio de: ${this.precio}`)
+    mostrarInfo: function () { // Y esto será una funcion
+         console.log(`El producto: ${this.nombre} tiene un precio de: ${this.precio} `)
     }
 }
 
+//Y si aca pongo
+producto.mostrarInfo(); //  y mando a llamar a la función, 
+//la consola me tira un error message, que "nombre" no está definida
+
+//Si creo otro objeto, con this. puedo ver que los valores no se mezclan:
 
 const producto2 = {
-    nombre: "Tablet",
+    nombre: "Tablet 20 pulgadas",
     precio: 3000, 
     disponible: true,
-    mostrarInfo: function() {
-        console.log(`El Producto: ${this.nombre} tiene un precio de: ${this.precio}`)
+    mostrarInfo: function () { // Y esto será una funcion
+         console.log(`El producto: ${this.nombre} tiene un precio de: ${this.precio} `)
     }
 }
-
-producto.mostrarInfo();
 producto2.mostrarInfo();
-
- //Asi los valores no se mezclan y no se salen del objeto.
- //This se mantiene dentro del ambito en el que fue declarado
- //asi, puedo tener muchos valores a la vez y no se mezclan.
- //Todo esto fue Object Literal

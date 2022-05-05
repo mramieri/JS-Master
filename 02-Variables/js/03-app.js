@@ -1,14 +1,18 @@
-//Diferencias entre let y CONST
+//Diferencias entre let y CONST: la mas importante, CONST no puede ser reasignada
 
-const producto = "tablet";
+/*let producto = "Tablet";
+  //1. una constante no se puede reasignar
+    producto = "Monitor";
 
-//No se pueden reasignar - primer diferencia
-//producto = "monitor";
+    console.log(producto);
+*/
+    //2. las variables con CONST deben siempre inicializar con un VALOR
 
-console.log(producto);
+    //esto no se puede:
+//const precio;
+//precio = 20;
 
-const precio = 20;
+const precio = 20;  
 
 console.log(precio);
-
-//ver el tema de que no se reflejan los errores bien en la consola!
+//no se puede inicializar el valor despues. si por algun motivo el valor cambia despues, o si en el momento aun no conozco el valor, debo utilizar LET
