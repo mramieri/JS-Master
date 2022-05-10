@@ -1,31 +1,34 @@
-//Ventajas de arrow functions CON métodos de propiedad:
+// Llevar estas funciones a arrow functions:
 
-const reproductor = {
-    cancion: '',
-        reproducir: id => console.log(`Reproduciendo cancion con el id ${id}`),
-        pausar: () => console.log('Pausando...'),
-        borrar: id => console.log(`Borrando canción..${id}`), // la coma es propia de los objetos, por eso la dejamos ahi
-        crearPlaylist: nombre => console.log(`Nueva playlist de ${nombre}`),
-        reproducirPlaylist: nombre => console.log(`Reproduciendo la Playlist de ${nombre}`),
-        
-        set nuevaCancion(cancion) { //Set es una forma de agregar valores.  es un metodo de propiedad.
-            this.cancion = cancion;
-            console.log(`Añadiendo ${cancion}`);
-        },
 
-        get obtenerCancion() {  // forma de obtener de vuelta esos valores. es un metodo de propiedad.
-            console.log(`${this.cancion}`)
-        }           
-       
- }
+const reproductor = {reproducir: id => console.log(`Reproduciendo canción con el ${id}`),    
+    cancion: "",    
+    pausar: () => console.log("pausando..."), // Acá si o si le tengo que poner los () vacios porque no hay parámetro 
+    borrar: id => console.log(`Borrando cancion.... ${id}`), 
+    crearPlaylist: owner => console.log(`Creando la Playlist de ${owner}`),
+    reproducirPlaylist: playlist => console.log(`Reproduciendo canción ${playlist}`),
 
-reproductor.nuevaCancion = 'Enter La Cancioncita'; //solamente se usan parentesis cuando se definen de esta forma: pausar: ()
+    //Otras 2 firmas de agregar! set y get     
+
+    set nuevaCancion(cancion) {
+        this.cancion = cancion;
+        console.log(`Añadiendo ${cancion}`);
+    }, 
+
+    get obtenerCancion() {
+        console.log(`${this.cancion}`)
+    }
+}
+
+reproductor.nuevaCancion = "Dale don dale"
 reproductor.obtenerCancion;
 
-    reproductor.reproducir(30);
-    reproductor.reproducir(20);
-    reproductor.pausar(); //mando a llamar a mi método
-    reproductor.borrar(30);
-    reproductor.crearPlaylist('Fiestera');
-    reproductor.crearPlaylist(`lentos`);
-    reproductor.reproducirPlaylist(`lentos`);
+
+reproductor.reproducir(30);
+reproductor.reproducir(20);
+reproductor.pausar();  
+reproductor.borrar(30);  
+reproductor.crearPlaylist("Marus");
+reproductor.reproducirPlaylist("It's raining man");
+
+ 

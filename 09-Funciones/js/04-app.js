@@ -1,20 +1,25 @@
 const numero1 = 20;
 const numero2 = "20";
 
-//metodos y funciones son practicamente lo mismo. la cuestion tiene que ver con el CONTEXTO en el que son utilizadas.
+//console.log( parseInt() ); // Esta es una función
+console.log( parseInt(numero2) ); // Me devuelve 20 en color azul. o sea que se convirtió a número.
 
-console.log( parseInt(numero2)) ; //Esto es una funcion. el String -->Se convirtio correctamente (azul)
-//nombre seguido de un parentesis
-//"numero2" seria un "argumento"
+//Y la sintaxis de nombre seguido de un ();
+
+//Si a const numero1 = 20; que está como número lo quiero convertir a String, para ello:
+console.log( numero1.toString() ); // para convertirlo primero pongo el nombre de la variable y luego un .toString(); // Esto significa que es un método.
+//Esta sintaxis es un método
+
+//Entonces se pueden ver las diferencias entre los dos:
+//Basicamdente son lo mismo. Ambas terminan haciendo el trabajo de una función.
 
 
-console.log( numero1.toString () ); // Esto significa que es un m´étodo.
+function sumar () {   
+    console.log( 2 + 2 );                        
 
-//Al final, ambas terminan haciendo el trabajo de una funcion, ambas son reutilizables, etc. Su sintaxis implica el ()
+}
 
-function sumar () { // Aca le estoy grabando un "parametro"
-    console.log(2 + 2);
-}; 
 
 sumar();
-
+sumar();
+sumar();
