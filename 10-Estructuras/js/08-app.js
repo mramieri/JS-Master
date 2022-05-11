@@ -1,21 +1,28 @@
+/*
 const autenticado = true;
-//no es necesario ponerle el === porque ya definimos que es autenticado es true
-if(autenticado){
-    console.log('El usuario es autenticado');
+
+if (autenticado) {
+    console.log("Autenticadoo");
+}
+*/
+
+const puntaje = 500;
+
+function revisarPuntaje (){
+
+    if (puntaje > 400) {
+        console.log("Excelentee!");
+        return;
+    } 
+    
+    
+    if (puntaje > 300) {
+        console.log("Buen puntaje, felicitaciones!");
+        return;
+    } 
+
 }
 
-const puntaje = 450;
-function revisarPuntaje() {
+revisarPuntaje(); // Mando a llamar a la función y ya el return frena en excelente,
+// porque si no tuviera ambos return, recibiria todos los mensajes. (porque estoy mandando a llamar a la funcion entera)
 
-if (puntaje > 400) {
-        console.log('Excelente!');
-     return; // el return es importante porque cumple, ejecuta y se sale.
-    }      
-if (puntaje > 300 ) {
-        console.log('Buen puntaje.. felicidades')
-    return;      // y como pasa lo anterior (fila 12) entonces este ya no se ejecuta.
-}
-};
-revisarPuntaje();
-
-//el if si cumple, ssolo ejecuta la primera eh. nada mas

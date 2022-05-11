@@ -1,20 +1,17 @@
-//Operador Menor que y Mayor que
-
-const dinero = 100;
+const dinero = 1000;
 const totalAPagar = 500;
-const tarjeta = false;
-const cheque = false;
+const tarjeta = true;  
+const cheque = true;
 
-if( dinero >= totalAPagar ) {
-    console.log('Si podemos pagar');
-} else if (cheque) {
-    console.log ('Si tengo un cheque')
+if ( dinero >= totalAPagar ) { 
+    console.log("si, podemos pagar");
+
 } else if (tarjeta) {
-    console.log ('Si puedo pagar porque tengo la tarjeta')
+    console.log("si, puedo pagar porque tengo la tarjeta.");
 
-} else {
-    console.log('Fondos insuficientes')
+} else if (cheque ) { 
+    console.log("si, tengo el cheque");
+
+} else {           
+    console.log("fondos insuficientes");
 }
-
-//aca se va a ejecutar la primera condicion que se cumpla en los IF, y por lo tanto no se ejecutan las posteriores
-//El else se ejecutará si ninguna de las condiciones previas se ejecuta

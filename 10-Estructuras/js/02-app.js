@@ -1,27 +1,18 @@
-//aca estoy comparando: si puntaje es = a 1.000
+/*
+const puntaje = 1002; // Este = para asignar es FUNDAMENTAL
 
-const puntaje = 1000; 
-const puntaje2 = "1000";
+if (puntaje != 1000) {      // Dos == es para comparar, en casi todos los lenguajes de programación. != significa "es diferente a"
+    console.log("si! es diferente a...");
+}
+*/
 
-console.log(typeof puntaje)
-console.log(typeof puntaje2)
 
-// y si quiero ¿diferente a mil?
+const puntaje = 1020; 
 
-//if(puntaje != 1000) {                      // != 'diferente'       y == es 'igual a'
- //   console.log('Si, es diferente')
-//}  
-
-//Triple igual:
-if(puntaje !== "1000") {         
-    console.log('Si, es diferente!')
+if (puntaje !== "1000") {      // No me devuelve nada en la consola porque no son lo mismo con este comparador estricto (si es que no le pongo el else)
+    console.log("si! es difente...");
 } else {
-        console.log('no, no es diferente')
+    console.log("no, no son diferentes");
 }
 
-//eso pasa porque con == es un operador mas relajado
-// === no es tan estricto   
-// === es  estricto (es el que más se recomienda). revisa por el tipo de dato y por el valor. no es lo mismo un 1 que un "1"
-
-
-// comparador estricto para ver si es distinto: !== (cuando es estricto tmb revisa por el valor y por el tipo de dato)
+//Con == es un operador más relajado y con === es un operador más estricto porque si revisa por el tipo de dato.

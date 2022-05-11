@@ -1,15 +1,11 @@
-//operador OR, se cumple una u otra.
-
 const efectivo = 300;
 const credito = 400;
-const disponible = efectivo + credito;
-const TotalPagar = 600;
+const diponible = efectivo + credito;
+const totalAPagar = 600;
 
-if ( efectivo > TotalPagar || credito > TotalPagar || disponible > TotalPagar) {
-    console.log('Si podemos pagar');
+if (efectivo > totalAPagar || credito > totalAPagar || diponible > totalAPagar){ // Acá revisa la primer condición O la segunda condición
+    console.log("Si podemos pagar");
+
 } else {
-    console.log('Fondos insuficientes');
+    console.log("Fondos insuficientes");
 }
-
-//este es el OR ||
-//con 1 solo que este vacio, en un formulario, le puedo decir al socio que todos los campos son obligatorios.. y debe llenarlos 
