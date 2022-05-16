@@ -1,44 +1,45 @@
-//.loop -  se ejecuta hasta que el codigo deje de cumplir una funcion
-// for es palabra reservada.
-//el for loop consta de 3 partes: la primera: el inicializador (en que lugar empieza a contar o repetirse el codigo). solo le ponemos una i.
-// la segunda parte es la condicion (i < 10) que vamos a revisar
-//la tercer parte: es el incrmento: i++ (vamos a ir incrementando de uno en uno)
+//.for loop
+/*
+
+for (let i = 0; i < 10 ; i++) { 
+        console.log(`Numero: ${i}`);
+}
 
 
-//Codigo:
-//for ( let i = 0; i <= 10; i++ ) { // o sea este código se ejcuta mientras 1 sea < a 10. cuando i ya sea = a  10, tonces ya no se ejecuta. 
-//    console.log(`Numero: ${i}`)
-//}
+for (let i = 0; i < 10 ; i+=2) {  //Esto me lo irá incrementando en 2 en 2 (0, 2 , 4 , 6)
+    console.log(`Numero: ${i}`);
+}
+*/
 
-//pregunta de entrevista: En un loop, ¿como se identifican los numeros que son pares y los que son nones?. As{:
+//Como identificar en un for loop pares de impares? Uso un iterador y un IF para comparar. Los numeros divididos por 2 sin resto son pares
 
-// for (let i = 1; 1 <= 20; i++) {
-    // if( i % 2 === 0 ) { // divido 2 (con el "modulo")
-            // console.log(`El número ${i} es PAR`);
-    // }
-// }
+/*
+for (let i = 1; i < 20; i++){
+        if ( i % 2 === 0) {
+            console.log(`El numero ${i} es PAR `); 
+        } else {
+            console.log(`El numero ${i} es IMPAR `); 
+        }
+}
+*/
 
-//Arreglo de emi
-//var text;
-//for (let i = 0; i < 5; i++) {
-//    text += "The number is " + i + "<br>";
-//    console.log(text);
-//  }
+//Los .for loops son muy utiles cuando tengo un array
+
+const carrito = [  //Aray
+    { nombre: "Monitor 27 pulgadas", precio: 500},  
+    {nombre: "Tablet", precio: 100},
+   { nombre: "PC de escritorio", precio: 200},
+   { nombre: "Televisor led", precio: 600},
+   { nombre: "CPU", precio: 260},
+    {nombre: "Auriculares", precio: 340},
+];
 
 
+//Si quiero saber cuantos elementos hay en un array?
+console.log(carrito.length); // Métodos que existen en los arrays
 
-const carrito = [
-    { nombre: 'Monitor 27 pulgadas', precio: 500 },
-    { nombre: 'Television', precio: 100 },
-    { nombre: 'Tablet', precio: 200 },
-    { nombre: 'Audifonos', precio : 300 },
-    { nombre: 'Teclado', precio: 400 },
-    { nombre: 'Celular', precio: 700 },
+//Si quiero mostrar en la consola el listado de items , con su nombre y precio, puedo usar un .for loop!
 
-]
-
-//console.log ( carrito.length) ;
-
-//for ( let i = 0; i < carrito.length; i++ ) {
-//    console.log(carrito[i]);
-//}
+for (let i = 0; i < carrito.length; i++) { // iterador
+    console.log("compre ya!", carrito[i].precio); // Propiedades de punto en los objetos
+}

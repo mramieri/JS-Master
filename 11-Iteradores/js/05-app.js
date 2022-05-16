@@ -1,11 +1,19 @@
-// a diferencia del while, el do while se ejecuta al menos una vez, y despues verifica la condicion
-//ya sea que se cumpla o no. al menos se tendra que ejecutar una vez NO importa si se cumple o no la condicion
+//Al igual que el while, tenemos que inicializar en 0
+
+let i = 1;
+
+do {  
 
 
-let i = 1000; // Inicio
+    if ( i % 15 === 0) {          
+        console.log(` ${i} FIZZ BUZZ!!`);    
+  
+     } else if ( i % 3 === 0 ) {
+        console.log(` ${i} FIZZ`);
+  
+     } else if ( i % 5 === 0 ) {
+        console.log(` ${i} BUZZ`);
+     } 
 
-do {
-    console.log(`Número ${i}`)
-
-    i++; //Incremento    
-} while ( i < 10 ); //Condicion.
+       i++;
+} while ( i < 20 );

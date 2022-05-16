@@ -1,34 +1,25 @@
-// For, while y do while existen en casi todos los lenguajes de programacion
-// en JS no se usan tanto.
-//en JS no se utilizan tanto. se usan los arrau methods.
+//.forEach
+/*
+const pendientes = ["tarea", "comer", "proyecto", "JavaScript"]; 
 
-//ahora: mayor enfoque en JS. el ForEach es el que mas se usa. es ideal para recorrer arreglos. Se ejecutará al menos una vez, por CADA vez que haya arreglos en el elemento.
-//si en el arreglo hay 20 elementos, se ejecutará 20 veces.,
+pendientes.forEach( (pendiente, index) => {  
+    console.log(`${index}: ${pendiente}`);
+}
+);
+*/
+//Array con objetoS. También puedo ir iterando sobre mi carrito.
 
-//forEach: es el IDEAL para recorrer una arreglo.
+const carrito = [ 
+    { nombre: "Monitor 27 pulgadas", precio: 500},  
+    {nombre: "Tablet", precio: 100},
+   { nombre: "PC de escritorio", precio: 200},
+   { nombre: "Televisor led", precio: 600},
+   { nombre: "CPU", precio: 260},
+    {nombre: "Auriculares", precio: 340},
+];
 
-const pendientes = ['Tarea', 'Comer', 'Proyecto', 'Estudiar', 'JavaScript'];
+const nuevoArray = carrito.forEach( producto => producto.nombre); 
+const nuevoArray2 = carrito.map( producto => producto.nombre); 
 
-pendientes.forEach( (pendiente, indice) => {
-    console.log(`${indice} : ${pendiente}`)
-})
-
-
-const carrito = [
-    { nombre: 'Monitor 27 pulgadas', precio: 500 },
-    { nombre: 'Television', precio: 100 },
-    { nombre: 'Tablet', precio: 200 },
-    { nombre: 'Audifonos', precio : 300 },
-    { nombre: 'Teclado', precio: 400 },
-    { nombre: 'Celular', precio: 700 },
-]
-
-const nuevoArreglo = carrito.forEach ( producto => producto.nombre);
-
-const nuevoArreglo2 = carrito.map ( (producto) => producto.nombre);
-
-console.log(nuevoArreglo);
-console.log(nuevoArreglo2);
-
-//la unica diferencia con estos dos: es que map crea un arreglo nuevo. foreach no.
-
+console.log(nuevoArray);  // Como está utilizando un foreach, no va a retornar nada 
+console.log(nuevoArray2); // Mientras que nuevoArray2, como utiliza .map(), va a ir "llenando" al array nuevoArray2 = en cada iteración:
