@@ -1,46 +1,40 @@
-//Array methods: hacen todo el trabajo pesado por mi. y de la forma manual: lo haria con un iterador.
-//.some
-//Hay metodos muy utiles para los arreglos
 
-const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'];
+const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio']; //Array con índices
 
 const carrito = [
-    { nombre: 'Monitor 27 Pulgadas', precio: 500 },
+    { nombre: 'Monitor 27 Pulgadas', precio: 500 }, //Array con objetos
     { nombre: 'Televisión', precio: 100 },
     { nombre: 'Tablet', precio: 200 },
     { nombre: 'Audifonos', precio: 300 },
     { nombre: 'Teclado', precio: 400 },
     { nombre: 'Celular', precio: 700 },
 ]
-//usualmente utilizaré un .foreach o .map si quiero acceder a c/u de los elementos.
-//comprobar si un valor existe en un arreglo, de forma manual:
 
-//meses.forEach( mes => {
-//      if (mes === 'Enero'){
-//          console.log('Enero si existe')
- //     }
-//});
+//Use case:
+//Comprar si un valor existe en el array "meses":
 
 
-//comprobar si un valor existe en un arreglo, con una array method
-//const resultado = meses.includes('Diciembre');
-//console.log(resultado);
-//el array method "includes" revisa si un valor existe existe en un arreglo.
-//en caso de que lo encuentre retorna un booleano, en caso lo encuentre o no, en el arreglo.
+meses.forEach( ( mes ) => { 
+    if ( mes  === "Enero") {
+        console.log("Enero existe!");
+    }
+   
+}) 
 
-//.includes funciona si se tiene un incide o un valor basado en un indice. si quiero revisar si un
-//valor existe en un arreglo con objetos, el .includes no funca tendria que usar .SOME
 
-//en un arreglo de objetos se usa .SOME
+const resultado = meses.includes("Diciembre"); //1. Creo una variable que vaya a almacenar el resultado de mi array method. // 2. Le paso al array .includes() que buscará por el elemento que yo le asigne. // 3. Le paso "Enero", para buscar así el elemento en cuestión. 
+console.log(resultado);  //4. Le paso un console.log a resultado y me devolverá true o false.
 
-const existe = carrito.some( producto => producto.nombre === 'Monitor curvo')
+//Nota: .includes();
+//Sólo funciona si tiene un array con índices o valores basado en indices (como const meses)
+//Y si quiero comprobar si existe un valor con un array de objetos?
+
+const existe = carrito.some( producto =>  producto.nombre === "Celular"  // Es más, con el arrow function se da por IMPLICITO el RETURN. Entonces puedo eliminarlo y borrar tmb las llaves! Y tener un código asi de compacto.
+ );
+
 console.log(existe);
 
-//Nota: en arrow functions -->el return se da por implicito. no es necesario que lo deje en el codigo y sus llaves.
+//Es más, .some() tmb sirve para comprobar arrays traidicionales /con indices!!
 
-//En un arreglo tradicional o de indices con .some
-//nota: cuando hay un paramentro solo, el () no es necesario. y un par de llaves tampoco son necesarias cuando tenemos una sola linea.
-const existe2 = meses.some( mes => mes === 'Febrero');
+const existe2 = meses.some(mes => mes === "Febrero");
 console.log(existe2);
-
-//entonces ., .some soporta arreglo de indices o un arreglo de objetos. mientras que 'includes', solamente un arreglo de indice, no de objetos.

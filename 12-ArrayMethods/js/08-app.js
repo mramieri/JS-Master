@@ -1,4 +1,4 @@
-//Red o Spread Operator
+//Como agregar un elemento al final de este array. 
 
 const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'];
 
@@ -11,15 +11,15 @@ const carrito = [
     { nombre: 'Celular', precio: 700 },
 ]
 
-//SpreadOperator con arreglo de indices
-const meses2 = ['Agosto', ...meses, ]; //esta forma NO modifica el arreglo original. se evita hacer eso. 
+//como haria para agregar Agosto al final de este array?
+
+/*
+const meses2 = ["Agosto", ...meses]; // La otra cosa es el ORDEN. si yo le pongo el string adelante de lo que vaya a replicar con el ...spread, eso entonces va a ir primero!
 console.log(meses2);
+*/
+//Array con objetos
 
-//como se utiliza el spread operator en un arreglo con objeto?
+const producto = {nombre: "disco duro", precio: 300} // como agrego este producto al carrito?
 
-const producto = { nombre: 'Disco Duro', precio: 300 };
-const carrito2 = [...carrito, producto] //sin el nombre del objeto
+const carrito2 = [producto, ...carrito]; // Reminder: la sintaxis del spread operator me creará un nuevo array Y en el caso de objetos, NO le pongo los ... solo le paso el objeto en cuestión (en este caso, producto).
 console.log(carrito2);
-
-
-//el error comun de 'no es iterable' (no puede tomar una copia), puede ser porque le este asignando un spread (...) a un objeto.
