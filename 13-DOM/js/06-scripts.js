@@ -1,29 +1,22 @@
-//102
-const encabezado = document.querySelector('.contenido-hero h1');
-console.log(encabezado);
+const encabezado = document.querySelector(".contenido-hero h1").textContent; //Y de esta manera ya selecciono directamente el contenido!
+console.log(encabezado); 
 
-//console.log(encabezado.innerText); //Si en el CSS - visibility: hidden;, no lo va a encontrar.
-//console.log(encabezado.textContent);//si lo va a encontrar
-//console.log(encabezado.innerHTML); // Se traer el HTML.
+/*
+Diferencias
+console.log(encabezado.innerText);
+console.log(encabezado.textContent); //Respeta los espacios en blanco
+console.log(encabezado.innerHTML); // Me trae el texto y tmb el HTML.
+*/
 
-//cual es la diferencia entre innerText e innerContent
+//document.querySelector(".contenido-hero h1").textContent  = "un nuevo heading";
 
+/*
+2da forma
+const nuevoHeading = "Nuevo heading"
+document.querySelector(".contenido-hero h1").textContent  = nuevoHeading;
+*/
+ 
+ //Modifico una imagen
 
-//Chaining o encadenamiento , como el .textContent (selecciono asi diferentes elementos).
-
-
-//mopifico por ejemplo el encabezado actual que tengo.. en JavaScript son asi interacciones sobre el DOM.
-//document.querySelector('.contenido-hero h1').textContent = 'nuevo heading';
-
-//Depende de mi estilo de programacion, tmb puedo hacerlo asi:
-//asi puedo tener un control sobre mi HTML. es una de las caracteristicas de JS. nacio como una lenguaje de la erb y nowadays incluso consulta bases de datos
-//con NODE pero nacio de esta forma.
-
-//const nuevoHeading = 'Nuevo Heading';
-//document.querySelector('.contenido-hero h1').textContent = nuevoHeading;
-
-//usar fireforx developer edition! me va a dar mas informacion de mis selectores.
-
-//ahora, para seleccionar una imagen e inclusive modificarla:
-const imagen = document.querySelector('.card img');
-imagen.src = 'img/hacer2.jpg'
+ const imagen = document.querySelector(".card img");
+imagen.src = "img/hacer2.jpg" // accedo a la imagen y la modifico poniendole = a la nueva imagen en cuestion.

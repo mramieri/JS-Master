@@ -1,14 +1,13 @@
-//Los ID's se utilizan una sola vez con un nombre por documento
+//Seleccionar por ud
 
-const formulario = document.getElementById('formulario');
-console.log(formulario);
+/*
+1. 1ro creo la variable desde donde seleccionare al id.
+2. SIEMPRE es IGUAL A document -> porque siempre se debe hacer primero referencia al documento
+3. le paso el .getElementById(); 
+4. Notemos la sintaxis; a diferencia de getelementSbyclassname, ahi se hablaba de multiples elementoS, mientras que en este otro, refiere a un elemento por su ID.
+5. Y a low () le paso el id que quiero buscar. En este caso es el id="formulario"
 
+*/
 
-//const noExiste = document.getElementById('no-existe');
-//console.log(noExiste);
-
-//Si tengo dos IDs o "2 formularios x ejemplo", el getElementByID va a buscar el primer ID que encuentre, leyendo de arriba hacia abajo en el html.
-//solo me retornara un elemento
-
-//Si tengo getElementsByClaseeName me retorna todos los elementos que sean iguales, pero porque las clases si se pueden utilizar mas de 1 vez x documento   
-//es mas usado el query selector
+const formulario = document.getElementById("formulario");
+console.log(formulario); 

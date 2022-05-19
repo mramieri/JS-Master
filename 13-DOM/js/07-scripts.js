@@ -1,25 +1,48 @@
-// 101. Cambiando el CSS con JavaScript
+/*
+Ej: Cuando lleno un formulario y dejo campos vacios, el campo se muestra en color rojo. Eso es porque tiene una clase basada en la  interaccion 
+que yo estoy haciendo
 
-//const encabezado = document.querySelector('h1');
 
-//encabezado.style.backgroundColor = 'red'
+//Modificar el color del encabezado
 
-//En Javascript
-//justifyContent
-//backgroundColor
 
-//las mismas propiedades que estan en CSS las voy a encontrar en JS
-//Diferencias: no lleva guin y las palabras pegadas van con MAYUS en la 1er inicial 
+const encabezado = document.querySelector("h1"); 
+encabezado.style.backgroundColor ="red";
 
-//encabezado.style.fontFamily = 'Arial';
-//encabezado.style.textTransform = 'uppercase';
 
-//pero esto sirve para cosas mas simples, necesito un codigo mas corto
+const encabezado = document.querySelector("h1");
+encabezado.style.backgroundColor = "red";
+//Y si le quiero cambiar la fuente al encabezado
 
-const card = document.querySelector('.card');
-card.classList.add('nueva-clase', 'segunda-clase');
-card.classList.remove('card');
+encabezado.style.fontFamily = "Arial";
+
+//Y si le quiero cambiar la fuente a mayusculas
+encabezado.style.textTransform = "uppercase";
+
+Nota: esta sintaxis para cosas sencillas está ok, pero a ese ritmo mi código de JS va a ser muy grande!Igual, la aparencia es responsabilidad del código CSS. Entonces, es una buena práctica agregar o quitar clases.
+*/
+
+//1. Selecciono el 1er card que es "Musica Electronica"
+/*
+const card = document.querySelector(".card");
+card.classList.add("nuevaa-clasee", "second-class-bb");  
+console.log(card.classList);  
+*/
+ 
+/*
+const card = document.querySelector(".card");
+card.classList.add("nuevaa-clasee", "second-class-bb");  
+card.classList.remove("second-class-bb");  
+console.log(card.classList);  
+*/
+
+const encabezado = document.querySelector("h1"); 
+encabezado.style.backgroundColor = "pink";
+encabezado.style.fontFamily = "arial";
+encabezado.style.textTransform = "uppercase";
+
+
+const card = document.querySelector(".card");
+card.classList.add("clasee-nuevitaa", "holaa");
+card.classList.remove("holaa");
 console.log(card.classList);
-
-//classlist: me trae todas las clases como si fuera un arreglo
-//y classnmae: que me los traerá como si fuera un string

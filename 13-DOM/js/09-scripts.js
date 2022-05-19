@@ -1,23 +1,12 @@
-//105. Eliminar elementos en el DOM
-//JS es un lenguaje que me permite agregar elementos a mis sitios y aplicaciones web: incluye Traversing the DOM.
-//y en este caso se puede eliminar un elemento por si mismo o bien, se lo puede eliminar desde el padre. por ejemplo: si elimino una foto de FB
+//eliminar elementos del DOM
+/*
+const primerEnlace = document.querySelector("a");
+primerEnlace.remove();
+*/
 
-//const primerEnlace = document.querySelector('a');
-//primerEnlace.remove();
-//console.log(primerEnlace);
+//Eliminar desde el padre:
 
-//Tmb hay otra forma que es encagrgar una referencia desde el padre (desde donde se elimina al hijo)
+const navegacion = document.querySelector(".navegacion"); // 1er paso es seleccionar a la clase contenedora del elemento que quiero eliminar
+console.log(navegacion.children); // 2. con esta propiedad podré encontrar los "hijos" de la clase seleccionada. 3. Así sabré la posición de indice para poder eliminar el elemento.
 
-const navegacion = document.querySelector('.navegacion');
-
-console.log(navegacion.children); //asi de esta manera puedo ver en que posicion está el elemento que quiero eliminar
-
-navegacion.removeChild( navegacion.children[2] );
-
-//el .children me permite identificar el indice del elemento 
-//y luego lo puedo eliminar con .removeChild
-
-//entonces el .Remove elimina un elemento por si mismo y sino a removeChild le paso la referencia del elemento que quiero eliminar
-
-//Cómo crear HTML desde JavaScript (MUY COMUN)
-//cuando estoy trabajando con el DOM es la creacion desde el HTML
+navegacion.removeChild(navegacion.children[2]);//4. Supongamos quiero eliminar "registro", de la posición n° 2. Uso el método removeChild. Y le paso el nodo que quiero eliminar

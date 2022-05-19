@@ -1,29 +1,22 @@
-//querySelector funciona similar a getElementbyID, retorna maximo un elemento. o ninguno, si no encuentra.
+//Como seleccionar una card (donde están las fotos) con un querySelector?
 
-const card = document.querySelector('.card');
+const card = document.querySelector(".card"); 
 console.log(card);
 
-//Sinoexiste no me va a retornar nada
+//Podemos tener selectores específicos como en CSS:
 
-
-//podemos tener selectores especificos como en CSS:
-const info = document.querySelector('.premium .info');
+const info = document.querySelector(".premium .info"); 
 console.log(info);
 
-//Seleccionar el segundo card de "hospedaje". en CSS se puede hacer esto:
+//Seleccionar el segundo Card de Hospedaje:
+const segundoCard = document.querySelector("section.hospedaje .card:nth-child(2)"); 
+console.log(segundoCard);  
 
-const segundoCard= document.querySelector('section.hospedaje .card:nth-child(2)');
-console.log(segundoCard);
 
-//y querySelector mtb me permite utilizarlo para IDs con la misma sintaxis que css
-
-//Seleccionar formulario
-
-const formulario = document.querySelector('contenido-hero #formulario');
+//Seleccionar el formulario
+const formulario = document.querySelector(".contenido-hero #formulario");  
 console.log(formulario);
 
-
-
 //Seleccionar elementos HTML
-const navegacion = document.querySelector('nav');
+const navegacion = document.querySelector("nav"); 
 console.log(navegacion);
