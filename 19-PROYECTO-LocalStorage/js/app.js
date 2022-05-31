@@ -1,122 +1,130 @@
-// 1. Variables
-const formulario = document.querySelector('#formulario');
-const listaTweets = document.querySelector('#lista-tweets');
+//Variables
+const formulario = document.querySelector("#formulario");
+const listaTweets = document.querySelector("#lista-tweets");
 let tweets = [];
 
 
-// 2. Event Listeners
 
-eventListeners ();
-
-    //Cuando el usuario agrega un nuevo tweet 
-    function eventListeners () {
-    formulario.addEventListener('submit', agregarTweet);
-
-    //Cuando el documento está listo
-    document.addEventListener('DOMContentLoaded', () => {
-        tweets = JSON.parse(localStorage.getItem('tweets')) || []; //"si me marca null, entonces asignalo como arreglo vacio"
+//Event Listeners
+eventListeners();
+function eventListeners(){
+    //Cuando user agrega nuevo tweet
+    formulario.addEventListener("submit", agregarTweet); 
+    
+    //Cuando el documento está listo:
+    document.addEventListener("DOMContentLoaded", () => {
+        tweets = JSON.parse(localStorage.getItem("tweets")) || []; 
 
         console.log(tweets);
+
         crearHTML();
     });
+
 }
 
-// 3. Funciones
-function agregarTweet(e) { //Como es un formulario, le pasamos la e
-    e.preventDefault(); //prevenir la accion por default     
 
-    //Text area: donde el usuario escribe
-    const tweet = document.querySelector('#tweet').value;
 
-    //Validación 
-    if (tweet === '') {
-         mostrarError('Un mensaje no puede ir vacio');
+//Funciones
+function agregarTweet(e){
+    e.preventDefault();
 
-        return; //Evita que se ejecuten más lineas de código. este RETURN funciona en un IF, siempre que se encuentre en una función
+    //Text area donde el user escribe
+    const tweet = document.querySelector("#tweet").value;
+    
+    
+    //Validar formulario
+    if(tweet === ""){
+        mostrarError("Un msj no puede ir vacio");
+        return;
     }
 
     const tweetObj = {
         id: Date.now(),
-        tweet            //cuando los dos objetos son = (tweet: tweet), se puede dejar uno solo
-    }
+        tweet
+    };
 
-    //Añadir al arreglo de tweets
-      tweets = [...tweets, tweetObj];
-      
-         
-    //Una vez agregado, vamos a crear el HTML 
-    crearHTML();
+     //Añadir al array de tweets
+     tweets = [...tweets, tweetObj];
 
-    //Reiniciar el formulario
-    formulario.reset();       
+     //Una vez agregado, creo el HTML:
+     crearHTML();
+
+     //Reiniciar el formulario
+     formulario.reset();
 }
 
-//Mostrar mensaje de error
-function mostrarError(error) {
-    const mensajeError = document.createElement('p');
-    mensajeError.textContent = error;
-    mensajeError.classList.add('error');
 
-    //Insertarlo en el contenido
-    const contenido = document.querySelector('#contenido');
+//Mostrar msj de error
+function mostrarError(error){
+    const mensajeError = document.createElement("p");
+    mensajeError.textContent = error;
+    mensajeError.classList.add("error");
+
+    //Insertarlo en el div contenedor
+    const contenido = document.querySelector("#contenido")
     contenido.appendChild(mensajeError);
 
-    // Elimina la alerta despues de 3 segundos  
-    setTimeout ( () => {
+    //Elimina alerta dsp de 3 segs
+    setTimeout(() => {
         mensajeError.remove();
-    },3000)  
+    }, 3000);
+}
+
+//Muestra un listado de los tweets:
+function crearHTML(){
+
+    limpiarHTML();
+
+        if(tweets.length > 0){
+        tweets.forEach(tweet => {
+            //Agrego delete button   1.
+            const btnEliminar = document.createElement("a")
+            btnEliminar.classList.add("borrar-tweet");
+            btnEliminar.innerText = "X";
+
+            //Añadir la funcion de eliminar 3.
+            btnEliminar.onclick = () => {
+                borrarTweet(tweet.id); 
+
+            }
+                        
+            //Creo el HTML
+            const li = document.createElement("li");
+
+            //Añadir el texto:
+            li.innerHTML = tweet.tweet;
+
+            //Asignar el boton  2.
+            li.appendChild(btnEliminar);
+
+            //Inserto en HTML
+            listaTweets.appendChild(li);
+
+        })
+
+        
+    }
+
+     sincronizarStorage();
+}
+
+//Agrega los tweets actuales a local storage:
+
+function sincronizarStorage(){
+    localStorage.setItem("tweets", JSON.stringify(tweets));
+}
+
+//Elimina un tweet
+function borrarTweet(id){
+     tweets = tweets.filter( tweet =>  tweet.id !== id); 
+     
+    crearHTML(); 
 }
 
 
-    //Muestra un listado de los tweets
-    function crearHTML(){
-
-        limpiarHTML();
-
-        if (tweets.length > 0 ) {
-            tweets.forEach( tweet => {
-
-                //Agregar un boton de eliminar
-                const btnEliminar = document.createElement('a')
-                btnEliminar.classList.add('borrar-tweet')
-                btnEliminar.innerText = 'X';
-
-                //Añadir la funcion de eliminar 
-                btnEliminar.onclick = () => {
-                    borrarTweet(tweet.id);
-                }
-
-                //Crear el HTML
-                const li = document.createElement('li'); 
-
-                //Añadir el texto
-                li.innerText = tweet.tweet;
-
-                //Asignar el boton
-                li.appendChild(btnEliminar);
-
-                //Insertarlo en el HTML 
-                listaTweets.appendChild(li); //Mientras tenga un append no eliminara el registro de antes entonces aparece a, b, a, b, c, etc
-            });
-        }
-
-            sincronizarStorage();
+//Limpiar HTML:
+function limpiarHTML(){
+    while(listaTweets.firstChild){
+        listaTweets.removeChild(listaTweets.firstChild);
     }
-
-    //Agrega los tweets actuales a local storage
-    function sincronizarStorage() {
-        localStorage.setItem('tweets', JSON.stringify(tweets));
-    }
-
-    //Elimina un tweet
-    function borrarTweet(id) {
-        tweets = tweets.filter( tweet => tweet.id !== id )
-        crearHTML();
-    }
-
-    //Limpiar el HTML
-    function limpiarHTML() {
-        while(listaTweets.firstChild) {
-            listaTweets.removeChild(listaTweets.firstChild);
-        }
-    }
+}
