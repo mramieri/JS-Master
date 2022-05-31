@@ -1,12 +1,11 @@
-localStorage.removeItem('nombre'); //asi se elimina un elemento de localStorage
-//Util para CROD =(crear, leer, actualizar y eliminar). para local storage no se puede actualizar!
+//Elimino nombre
+localStorage.removeItem("Nombre:");
 
-//Actualizar un registro
-const mesesArray = JSON.parse(localStorage.getItem('meses'));
+//Actualizar un registro:
+const mesesArray = JSON.parse(localStorage.getItem("Meses:")); //obtengo Meses y lo convierto a Array, todo en un solo paso
 console.log(mesesArray);
-mesesArray.push('Nuevo mes') //Array method
+mesesArray.push(" Nuevo mes");
 console.log(mesesArray);
-localStorage.setItem('meses', JSON.stringify(mesesArray)); //Esto reescribe el valor actual. localStorage no hay algo pata poder actualizar un elemento. usamos SET. es como si fuera una actualizacion.
+localStorage.setItem("Meses:", JSON.stringify(mesesArray)); // uso nueevamente setItem, y reescribo el array anterior. ojo! no olvidar de convertirlo a string, sino no reescribira.
 
-//Hay un metodo mas:
-localStorage.clear(); //esto limpia todo el local storage. todo lo que haya lo eliminará
+localStorage.clear();
