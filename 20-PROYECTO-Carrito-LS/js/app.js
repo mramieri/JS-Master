@@ -15,12 +15,14 @@ function cargarEventListeners(){
     //Elimina cursos del carrito
     carrito.addEventListener('click', eliminarCurso)
 
-    //Muestra los cursos de Local Storage
-    document.addEventListener('DOMContentLoaded', () => {
-        articulosCarrito = JSON.parse( localStorage.getItem('carrito') ) || [];
-
-        carritoHTML();
-    })
+    //Muestra los cursos de Local Storage 2!!
+    document.addEventListener("DOMContentLoaded", () => {
+        articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || []; //y obtengo el carrito.
+        //Si el user no agregó nada alc arrito, eso le marcará null. entonces para darle la posibilidad de que no agregue nada, le paso la opcion y pongo un array vacio. o sea que articuloscarrito sea un array vacio
+   
+   carritoHTML(); //mando a llamar a esa funcion paea que me imprima lo que tengo en localstorage
+    });
+    
 
     //Vaciar el carrito
     vaciarCarritoBtn.addEventListener('click', () => {
@@ -133,9 +135,11 @@ function carritoHTML () {
     sincronizarStorage();
 }
 
-function sincronizarStorage() {
-    localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
-}
+    //Agregar el carrito al storage 1!!
+  function  sincronizarStorage(){
+    localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
+    }
+
 
 //Eliminar los cursos del tbody
 function limpiarHTML (){
